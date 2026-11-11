@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2eee6">
+  <meta name="description" content="Gabriel Leão Tattoo em Lavras, MG. Realismo, blackwork e projetos autorais. Converse e agende pelo WhatsApp.">
+  <title>Gabriel Leão Tattoo | Lavras, MG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f2eee6;
+      --ink: #171714;
+      --muted: #716f67;
+      --line: #d4d0c7;
+      --red: #c6402c;
+      --white: #fbfaf7;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.5 var(--sans);
+    }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .wrap { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+    .topline { height: 6px; background: var(--red); }
+    header {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark {
+      width: 38px; height: 38px; display: grid; place-items: center;
+      color: var(--paper); background: var(--ink); font: 700 20px var(--serif);
+    }
+    .brand-name { font-size: 13px; font-weight: 700; line-height: 1.15; letter-spacing: 0; }
+    .brand-name span { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 500; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a { font-size: 13px; text-decoration: none; }
+    .nav-links a:hover { color: var(--red); }
+    .button {
+      min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 0 20px; border: 1px solid var(--ink); background: var(--ink); color: var(--white);
+      font-weight: 600; font-size: 13px; text-decoration: none; cursor: pointer; transition: background .2s, color .2s;
+    }
+    .button:hover { background: var(--red); border-color: var(--red); }
+    .button svg { width: 17px; height: 17px; }
+
+    .hero { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 54px; padding-block: 72px 76px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+    .eyebrow::before { width: 24px; height: 1px; background: currentColor; content: ""; }
+    h1 { max-width: 550px; margin: 20px 0 18px; font: 600 62px/.99 var(--serif); letter-spacing: 0; }
+    h1 em { color: var(--red); font-weight: 500; }
+    .hero-copy { max-width: 440px; margin: 0; color: #55544e; font-size: 16px; }
+    .hero-actions { display: flex; align-items: center; gap: 22px; margin-top: 30px; }
+    .text-link { font-size: 13px; font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .hero-proof { display: flex; align-items: center; gap: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .stars { color: var(--red); font-size: 15px; letter-spacing: 1px; }
+    .proof-copy { font-size: 12px; line-height: 1.35; }
+    .proof-copy strong { font-size: 13px; }
+    .hero-visual { position: relative; min-width: 0; padding: 0 0 30px 28px; }
+    .hero-visual::before { position: absolute; z-index: -1; top: -18px; right: -14px; width: 56%; height: 56%; border: 1px solid var(--red); content: ""; }
+    .hero-photo { display: block; width: 100%; aspect-ratio: 1.17; object-fit: cover; background: #d8d2c8; }
+    .photo-caption { position: absolute; right: 0; bottom: 0; display: flex; align-items: center; gap: 10px; min-height: 58px; padding: 0 18px; background: var(--red); color: var(--white); font-size: 11px; font-weight: 600; }
+    .photo-caption svg { width: 19px; height: 19px; }
+
+    .facts { border-block: 1px solid var(--line); }
+    .fact-row { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .fact { min-height: 88px; display: flex; align-items: center; gap: 14px; padding: 16px 26px; border-right: 1px solid var(--line); }
+    .fact:first-child { padding-left: 0; }
+    .fact:last-child { border-right: 0; }
+    .fact svg { width: 22px; height: 22px; flex: none; color: var(--red); }
+    .fact span { display: block; color: var(--muted); font-size: 11px; }
+    .fact strong { display: block; font-size: 13px; font-weight: 600; }
+
+    .studio { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; padding-block: 96px; }
+    .section-label { margin: 0 0 15px; color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+    h2 { margin: 0; font: 600 42px/1.08 var(--serif); letter-spacing: 0; }
+    .studio-copy { max-width: 630px; color: #55544e; }
+    .studio-copy p { margin: 0 0 16px; }
+    .studio-copy blockquote { margin: 24px 0 0; padding-left: 18px; border-left: 2px solid var(--red); color: var(--ink); font: 500 20px/1.4 var(--serif); }
+
+    .booking { padding-block: 76px 88px; background: var(--ink); color: var(--white); }
+    .booking-head { display: flex; justify-content: space-between; align-items: end; gap: 32px; padding-bottom: 36px; border-bottom: 1px solid #44433e; }
+    .booking .section-label { color: #e77b67; }
+    .booking h2 { max-width: 550px; }
+    .booking-head p { max-width: 310px; margin: 0; color: #c2c0b9; font-size: 13px; }
+    .booking-layout { display: grid; grid-template-columns: 1fr 300px; gap: 72px; padding-top: 38px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 18px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { color: #dad8d1; font-size: 11px; font-weight: 600; }
+    .field input, .field select, .field textarea {
+      width: 100%; min-height: 48px; padding: 12px 13px; border: 1px solid #55544d; border-radius: 0;
+      outline: none; background: #22221f; color: var(--white); font-size: 13px;
+    }
+    .field textarea { min-height: 100px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: #e77b67; box-shadow: 0 0 0 1px #e77b67; }
+    .field input::placeholder, .field textarea::placeholder { color: #8e8c85; }
+    .form-submit { margin-top: 22px; border: 0; background: var(--red); }
+    .form-submit:hover { background: #a83222; }
+    .booking-aside { padding-left: 25px; border-left: 1px solid #44433e; }
+    .booking-aside h3 { margin: 0 0 10px; font: 600 22px var(--serif); }
+    .booking-aside p { margin: 0 0 24px; color: #c2c0b9; font-size: 13px; }
+    .aside-detail { display: flex; gap: 11px; margin: 17px 0; color: #e3e1da; font-size: 12px; }
+    .aside-detail svg { width: 17px; height: 17px; flex: none; color: #e77b67; }
+    .aside-detail a { text-decoration: none; }
+
+    footer { padding-block: 25px; background: var(--red); color: var(--white); }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 11px; }
+    .footer-row a { text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; }
+    .icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr 1fr; gap: 28px; padding-block: 56px; }
+      h1 { font-size: 50px; }
+      .studio { gap: 38px; }
+      .booking-layout { grid-template-columns: 1fr 245px; gap: 38px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 36px, 480px); }
+      header { height: 70px; }
+      .nav-links { gap: 0; }
+      .nav-links a:not(.button) { display: none; }
+      .nav-links .button { min-height: 42px; padding-inline: 13px; font-size: 12px; }
+      .hero { grid-template-columns: 1fr; gap: 38px; padding-block: 48px 45px; }
+      h1 { max-width: 430px; font-size: 52px; }
+      .hero-copy { font-size: 15px; }
+      .hero-visual { padding-left: 13px; }
+      .hero-photo { aspect-ratio: 1.14; }
+      .hero-visual::before { top: -10px; right: -7px; }
+      .photo-caption { min-height: 50px; padding-inline: 13px; }
+      .fact-row { grid-template-columns: 1fr; }
+      .fact { min-height: 70px; padding-inline: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .fact:last-child { border-bottom: 0; }
+      .studio { grid-template-columns: 1fr; gap: 24px; padding-block: 64px; }
+      h2 { font-size: 36px; }
+      .booking { padding-block: 60px; }
+      .booking-head { align-items: start; flex-direction: column; gap: 18px; padding-bottom: 25px; }
+      .booking-layout { grid-template-columns: 1fr; gap: 38px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .booking-aside { padding: 25px 0 0; border-top: 1px solid #44433e; border-left: 0; }
+      .footer-row { align-items: start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="Gabriel Leão Tattoo, início">
+        <span class="brand-mark">GL</span>
+        <span class="brand-name">GABRIEL LEÃO<span>TATTOO · LAVRAS, MG</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#estudio">O estúdio</a>
+        <a href="#agendar">Agendamento</a>
+        <a class="button" href="#agendar">Começar meu projeto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="inicio">
+      <div>
+        <div class="eyebrow">Estúdio de tatuagem · Lavras</div>
+        <h1>Uma ideia sua.<br>Uma arte <em>pra vida.</em></h1>
+        <p class="hero-copy">Projetos autorais, atenção em cada detalhe e um espaço tranquilo para transformar sua ideia em tatuagem.</p>
+        <div class="hero-actions">
+          <a class="button" href="#agendar">
+            Agendar conversa
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Gabriel+Le%C3%A3o+Tattoo+Lavras+MG" target="_blank" rel="noreferrer">Ver fotos no Google</a>
+        </div>
+        <div class="hero-proof">
+          <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
+          <div class="proof-copy"><strong>5,0 no Google</strong><br>59 avaliações de clientes</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-photo" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdAEds5ljXmBIhNoJ_A9-JTT3b9LwEMUTOKc941PKCRTQn124Nk0mCfKFz-GC40zPXbBFQbFPAu91N7e3HOO4z_yi5v0cX4CglSL6gIS2ngTELA50O0sLNm6kzEz7nd0ibhePGnY8du9V9S=w1200-h900-k-no" alt="Foto do perfil Gabriel Leão Tattoo no Google Maps" referrerpolicy="no-referrer">
+        <a class="photo-caption" href="https://www.google.com/maps/search/?api=1&query=Gabriel+Le%C3%A3o+Tattoo+Lavras+MG" target="_blank" rel="noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3l2-3h8l2 3h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>
+          Fotos originais do perfil no Google
+        </a>
+      </div>
+    </section>
+
+    <section class="facts" aria-label="Informações do estúdio">
+      <div class="wrap fact-row">
+        <div class="fact">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><span>Endereço</span><strong>Centro · Lavras, MG</strong></div>
+        </div>
+        <div class="fact">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3.1a2 2 0 0 1-.6 1.7L7.1 10.4a16 16 0 0 0 6 6l1.9-1.9a2 2 0 0 1 1.7-.6l3.1.5a2 2 0 0 1 2.2 2.5Z"/></svg>
+          <div><span>Contato direto</span><strong>(37) 99842-4506</strong></div>
+        </div>
+        <div class="fact">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v10l6 3"/><circle cx="12" cy="12" r="10"/></svg>
+          <div><span>Atendimento</span><strong>Com hora marcada</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap studio" id="estudio">
+      <div>
+        <p class="section-label">O estúdio</p>
+        <h2>Seu projeto merece calma e cuidado.</h2>
+      </div>
+      <div class="studio-copy">
+        <p>Cada tatuagem começa com uma conversa. Conte sua ideia, referências e o que ela significa para você. O projeto é pensado junto, respeitando seu estilo e o lugar escolhido no corpo.</p>
+        <p>O estúdio fica no Centro de Lavras. Para fechamentos de realismo e blackwork, consulte as condições especiais diretamente com o Gabriel.</p>
+        <blockquote>“Foi uma experiência super tranquila, ambiente controlado e muito legal de estar.”</blockquote>
+      </div>
+    </section>
+
+    <section class="booking" id="agendar">
+      <div class="wrap">
+        <div class="booking-head">
+          <div>
+            <p class="section-label">Vamos conversar</p>
+            <h2>Conte sua ideia. O próximo passo é nosso.</h2>
+          </div>
+          <p>Preencha o básico do seu projeto. A mensagem abre no WhatsApp para combinar os detalhes e encontrar um horário.</p>
+        </div>
+        <div class="booking-layout">
+          <form id="booking-form">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Seu nome</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Como podemos te chamar?" required>
+              </div>
+              <div class="field">
+                <label for="phone">Seu WhatsApp</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+              </div>
+              <div class="field">
+                <label for="style">Estilo da tattoo</label>
+                <select id="style" name="style" required>
+                  <option value="" disabled selected>Selecione uma opção</option>
+                  <option>Realismo</option>
+                  <option>Blackwork</option>
+                  <option>Outro estilo</option>
+                  <option>Ainda estou decidindo</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="when">Quando gostaria de tatuar?</label>
+                <input id="when" name="when" type="text" placeholder="Ex.: próximo mês, sem pressa">
+              </div>
+              <div class="field full">
+                <label for="idea">Fale um pouco sobre a ideia</label>
+                <textarea id="idea" name="idea" placeholder="Local do corpo, tamanho aproximado e referências que já tem..."></textarea>
+              </div>
+            </div>
+            <button class="button form-submit" type="submit">
+              Enviar pelo WhatsApp
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+          <aside class="booking-aside">
+            <h3>Prefere falar direto?</h3>
+            <p>Chame o Gabriel e conte o que está imaginando.</p>
+            <div class="aside-detail">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+              <a href="https://wa.me/5537998424506" target="_blank" rel="noreferrer">(37) 99842-4506</a>
+            </div>
+            <div class="aside-detail">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>R. Dr. Francisco Sales, 376<br>Sl 01 · Centro · Lavras, MG</span>
+            </div>
+            <div class="aside-detail">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="1"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              <span>Horário combinado pelo WhatsApp</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>Gabriel Leão Tattoo · Lavras, MG</span>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/gabrielleao.tattoo/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Gabriel+Le%C3%A3o+Tattoo+Lavras+MG" target="_blank" rel="noreferrer">Google Maps</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.querySelector("#booking-form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const message = [
+        "Olá, Gabriel! Quero conversar sobre uma tatuagem.",
+        `Nome: ${data.get("name")}`,
+        `Meu WhatsApp: ${data.get("phone")}`,
+        `Estilo: ${data.get("style")}`,
+        `Quando: ${data.get("when") || "A combinar"}`,
+        `Minha ideia: ${data.get("idea") || "Quero conversar sobre referências."}`
+      ].join("\n");
+      window.open(`https://wa.me/5537998424506?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
